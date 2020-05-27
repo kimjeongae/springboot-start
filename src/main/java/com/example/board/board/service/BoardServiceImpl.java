@@ -5,12 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.board.board.dto.BoardDto;
 import com.example.board.board.mapper.BoardMapper;
 
 @Service
 @Repository
+//@Transactional
 public class BoardServiceImpl implements BoardService{
 	
 	@Autowired
@@ -29,7 +31,6 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public BoardDto selectBoardDetail(int boardIdx) throws Exception {
 		boardMapper.updateHitCount(boardIdx);
-		
 		BoardDto board = boardMapper.selectBoardDetail(boardIdx);
 		return board;
 	}
