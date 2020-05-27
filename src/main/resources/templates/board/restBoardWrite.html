@@ -4,24 +4,31 @@
 	<meta charset="UTF-8">
 	<title>board</title>
 	<link rel="stylesheet" th:href="@{/css/style.css}"/>
+	<link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.css}" media="screen">
+    <link rel="stylesheet" th:href="@{/bootstrap/css/custom.min.css}" media="screen">		
 </head>
 <body>
 	<div class="container">
+		<div class="jumbotron">
+		  <h1 class="display-3">Hello!</h1>
+		  <p class="lead">Java Spring boot study page. <a href="http://skykimpro.com" targer="_blank">http://skykimpro.com</a></p>  
+		</div>
+			
 	    <h2>게시글 등록</h2>
 	    <form id="frm" name="frm" method="post" action="/board/write" enctype="multipart/form-data">
 	    	<table class="board_detail">
 	    		<tr>
 	    			<td>제목</td>
-	    			<td><input type="text" id="title" name="title"/></td>
+	    			<td><input type="text" id="title" name="title"  class="form-control"/></td>
 	    		</tr>
 	    		<tr>
 	    			<td colspan="2">
-		    			<textarea id="contents" name="contents"></textarea>
+		    			<textarea id="contents" name="contents"  class="form-control"></textarea>
 	    			</td>
 	    		</tr>
 	    	</table>
-	    	<input type="file" id="files" name="files" multiple="multiple">
-	    	<input type="submit" id="submit" value="저장" class="btn">
+	    	<input type="file" id="files" name="files" multiple="multiple"  class="form-control-file">
+	    	<input type="submit" id="submit" value="저장" class="btn btn-primary">
 	    </form>
     </div>
 </body>

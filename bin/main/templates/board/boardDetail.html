@@ -4,9 +4,16 @@
 	<meta charset="UTF-8">
 	<title>게시글 상세 화면</title>
 	<link rel="stylesheet" th:href="@{/css/style.css}"/>
+	<link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.css}" media="screen">
+    <link rel="stylesheet" th:href="@{/bootstrap/css/custom.min.css}" media="screen">		
 </head>
 <body>
 	<div class="container">
+		<div class="jumbotron">
+		  <h1 class="display-3">Hello!</h1>
+		  <p class="lead">Java Spring boot study page. <a href="http://skykimpro.com" targer="_blank">http://skykimpro.com</a></p>  
+		</div>
+			
 		<h2>게시글 상세 화면</h2>
 	    <form id="frm" method="post">
 	    	<table class="board_detail">
@@ -32,11 +39,11 @@
 					</tr>
 					<tr>
 						<th scope="row">제목</th>
-						<td colspan="3"><input type="text" id="title" name="title" th:value="${board.title }"/></td>
+						<td colspan="3"><input type="text" id="title" name="title" th:value="${board.title }"  class="form-control"/></td>
 					</tr>
 					<tr>
 						<td colspan="4" class="view_text">
-							<textarea title="내용" id="contents" name="contents" th:text="${board.contents }"></textarea>
+							<textarea title="내용" id="contents" name="contents" th:text="${board.contents }"  class="form-control"></textarea>
 						</td>
 					</tr>
 				</tbody>
@@ -48,9 +55,14 @@
 			<a th:each="list : ${board.fileList}" th:href="@{/board/downloadBoardFile.do(idx=${list.idx}, boardIdx=${list.boardIdx})}" th:text="|${list.originalFileName} (${list.fileSize} kb)|"></a>
 		</div>
 		
+		<!-- 
 		<a href="#this" id="list" class="btn">목록으로</a>
 		<a href="#this" id="edit" class="btn">수정하기</a>
 		<a href="#this" id="delete" class="btn">삭제하기</a>
+		 -->
+		<button type="button" id="list" class="btn btn-secondary">목록으로</button>
+		<button type="button" id="edit" class="btn btn-success">수정하기</button>
+		<button type="button" id="delete" class="btn btn-info">삭제하기</button>
 	</div>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
