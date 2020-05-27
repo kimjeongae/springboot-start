@@ -1,4 +1,6 @@
 package com.example.board.board.dto;
+import java.util.List;
+
 import lombok.Data;
 
 @Data
@@ -20,6 +22,8 @@ public class BoardDto {
 	
 	private String updatedDatetime;
 
+	private List<BoardFileDto> fileList;
+	
 	public int getBoardIdx() {
 		return boardIdx;
 	}
