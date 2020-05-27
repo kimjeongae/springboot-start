@@ -1,16 +1,10 @@
 package com.example.board.board.service;
 
-import java.util.Iterator;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.ObjectUtils;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.util.CollectionUtils;
 
@@ -23,8 +17,6 @@ import com.example.board.common.FileUtils;
 @Repository
 //@Transactional
 public class BoardServiceImpl implements BoardService{
-	
-	private Logger log = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
 	private BoardMapper boardMapper;
