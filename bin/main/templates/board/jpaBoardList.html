@@ -9,12 +9,19 @@
 </head>
 <body>
     <div class="container">    
-		<div class="jumbotron">
+		<div class="jumbotron">		  
 		  <h1 class="display-3">Hello!</h1>
-		  <p class="lead">Java Spring boot study page. <a href="http://skykimpro.com" target="_blank">http://skykimpro.com</a></p>  
+		  <p class="lead">
+		  Java Spring page. <small>[ contact me : <a href="http://skykimpro.com" target="_blank">http://skykimpro.com</a> ]</small>
+		  </p>
+
+			<button type="button" class="btn btn-info disabled" onclick="location.href='/board/openBoardList.do'">Board</button>
+			<button type="button" class="btn btn-warning disabled" onclick="location.href='/board'">Restful Board</button>
+			<button type="button" class="btn btn-warning disabled" onclick="location.href='/board'">REST API Board</button>
+			<button type="button" class="btn btn-danger disabled" onclick="location.href='/jpa/board/'">JPA Board</button>
 		</div>
  
-    	<h2>게시글 목록</h2>
+    	<h2>JPA Board - 게시글 목록</h2>
     	<table class="table table-hover">
 	        <colgroup>
 	            <col width="15%"/>

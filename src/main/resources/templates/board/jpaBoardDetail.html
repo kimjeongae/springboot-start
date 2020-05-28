@@ -9,12 +9,19 @@
 </head>
 <body>
 	<div class="container">
-		<div class="jumbotron">
+		<div class="jumbotron">		  
 		  <h1 class="display-3">Hello!</h1>
-		  <p class="lead">Java Spring boot study page. <a href="http://skykimpro.com" target="_blank">http://skykimpro.com</a></p>  
+		  <p class="lead">
+		  Java Spring page. <small>[ contact me : <a href="http://skykimpro.com" target="_blank">http://skykimpro.com</a> ]</small>
+		  </p>
+
+			<button type="button" class="btn btn-info disabled" onclick="location.href='/board/openBoardList.do'">Board</button>
+			<button type="button" class="btn btn-warning disabled" onclick="location.href='/board'">Restful Board</button>
+			<button type="button" class="btn btn-warning disabled" onclick="location.href='/board'">REST API Board</button>
+			<button type="button" class="btn btn-danger disabled" onclick="location.href='/jpa/board/'">JPA Board</button>
 		</div>
 			
-		<h2>게시글 상세 화면</h2>
+		<h2>JPA Board - 게시글 상세 화면</h2>
 	    <form id="frm" method="post">
 	    	<table class="board_detail">
 				<colgroup>
@@ -26,19 +33,19 @@
 				<caption>게시글 상세내용</caption>
 				<tbody>
 					<tr>
-						<th scope="row">글 번호</th>
+						<td scope="row">글 번호</td>
 						<td th:text="${board.boardIdx }"></td>
-						<th scope="row">조회수</th>
+						<td scope="row">조회수</td>
 						<td th:text="${board.hitCnt }"></td>
 					</tr>
 					<tr>
-						<th scope="row">작성자</th>
+						<td scope="row">작성자</td>
 						<td th:text="${board.creatorId }"></td>
-						<th scope="row">작성일</th>
+						<td scope="row">작성일</td>
 						<td th:text="${board.createdDatetime }"></td>
 					</tr>
 					<tr>
-						<th scope="row">제목</th>
+						<td scope="row">제목</td>
 						<td colspan="3"><input type="text" id="title" name="title" th:value="${board.title }"  class="form-control" /></td>
 					</tr>
 					<tr>
