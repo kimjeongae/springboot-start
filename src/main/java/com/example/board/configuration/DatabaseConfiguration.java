@@ -1,4 +1,5 @@
 package com.example.board.configuration;
+
 import java.util.Properties;
 
 import javax.sql.DataSource;
@@ -20,8 +21,8 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
-@PropertySource("classpath:/application.properties")
-@EnableTransactionManagement
+//@PropertySource("classpath:/application.properties")
+//@EnableTransactionManagement
 public class DatabaseConfiguration {
 	
 	@Autowired
@@ -38,18 +39,18 @@ public class DatabaseConfiguration {
 	public org.apache.ibatis.session.Configuration mybatisConfig(){
 		return new org.apache.ibatis.session.Configuration(); 
 	}
-	
-	@Bean
-	@ConfigurationProperties(prefix="spring.jpa")
-	public Properties hibernateConfig() {
-		return new Properties();
-	}
-	
+
 	@Bean
 	public DataSource dataSource() throws Exception{
 		DataSource dataSource = new HikariDataSource(hikariConfig());
 		return dataSource;
 	}
+	
+	@Bean
+	@ConfigurationProperties(prefix="spring.jpa")
+	public Properties hibernateConfig() {
+		return new Properties();
+	}	
 	
 	@Bean
 	public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception{
@@ -66,8 +67,10 @@ public class DatabaseConfiguration {
 		return new SqlSessionTemplate(sqlSessionFactory);
 	}
 	
+	/*
 	@Bean
 	public PlatformTransactionManager transactionManager() throws Exception {
 		return new DataSourceTransactionManager(dataSource());
 	}
+	*/
 }
